@@ -1,9 +1,13 @@
-from preprocessing.clean import clean_text
-from preprocessing.tokenize import tokenize
+from nlp.intent_classifier import IntentClassifier
 
-text = ">-< test te/xt to test t\he clean functi%on. &* "
-cleansed = clean_text(text)
+clf = IntentClassifier("./data/intents.json")
+clf.train()
 
-print("original => "+text)
-print("cleaned => "+cleansed)
-print(f"Tokenized => {tokenize(cleansed)}")
+while True:
+    text = input("You: ")
+    intent, confidence = clf.predict(text)
+
+    if confidence < 0.3:
+        print("I didn't understand that.")
+    else:
+        print("Intent:", intent)

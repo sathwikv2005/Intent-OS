@@ -6,16 +6,107 @@
 				"show my timetable",
 				"what are my classes today",
 				"schedule for today",
-				"what classes do i have"
+				"what classes do i have",
+				"today timetable",
+				"todays timetable",
+				"what is today's timetable",
+				"show today's schedule",
+				"classes today",
+				"my timetable today",
+
+				"show schedule",
+				"show timetable",
+				"my schedule",
+				"what is my schedule",
+				"what classes today",
+				"what do i have today",
+				"today classes",
+				"list my classes",
+				"what lectures do i have",
+				"what lectures today",
+				"today's classes",
+				"schedule today",
+				"time table today",
+				"time table",
+				"class schedule"
 			]
 		},
 		{
 			"tag": "get_attendance",
-			"patterns": ["show my attendance", "attendance percentage", "how much attendance do i have"]
+			"patterns": [
+				"show my attendance",
+				"attendance percentage",
+				"how much attendance do i have",
+
+				"what is my attendance",
+				"my attendance",
+				"attendance",
+				"attendance details",
+				"how is my attendance",
+				"what is my attendance percentage",
+				"how much attendance",
+				"attendance status",
+				"am i safe in attendance",
+				"will i get debarred",
+				"can i skip classes",
+				"how many classes can i skip",
+				"how many classes should i attend",
+				"attendance report",
+				"minimum attendance",
+				"attendance required",
+				"do i have enough attendance"
+			]
 		},
 		{
 			"tag": "get_marks",
-			"patterns": ["show my marks", "my scores", "exam results"]
+			"patterns": [
+				"show my marks",
+				"my scores",
+				"exam results",
+
+				"marks",
+				"show marks",
+				"my marks",
+				"results",
+				"exam marks",
+				"subject marks",
+				"internal marks",
+				"external marks",
+				"how much did i score",
+				"how did i perform",
+				"my performance",
+				"scores",
+				"grade",
+				"grades",
+				"what are my grades",
+				"result",
+				"semester results",
+				"how did i do in exams"
+			]
+		},
+		{
+			"tag": "get_next_class",
+			"patterns": [
+				"what is my next class",
+				"what class is next",
+				"next class",
+				"which class is next",
+				"what's next",
+				"what do i have next",
+				"next lecture",
+
+				"upcoming class",
+				"next subject",
+				"which subject is next",
+				"what lecture is next",
+				"what class do i have next",
+				"next period",
+				"next hour class",
+				"what is next in schedule",
+				"what comes next",
+				"next session",
+				"what's my next lecture"
+			]
 		}
 	]
 }
