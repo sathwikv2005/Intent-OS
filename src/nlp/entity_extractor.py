@@ -1,4 +1,6 @@
 import re
+from datetime import datetime, timedelta
+
 
 class EntityExtractor:
     def __init__(self):
@@ -25,17 +27,28 @@ class EntityExtractor:
         if courses:
             entities["course_codes"] = courses
 
+        dates = []
 
-        # dates
-        dates_data = self._extract_dates(text)
-        if dates_data:
-            entities.update(dates_data)
-            return entities  # stop early if full dates exist
+        # full dates
+        explicit_dates = self._extract_dates(text)
+        if explicit_dates:
+            dates.extend(explicit_dates)
+
+        # relative dates
+        relative_dates = self._extract_relative_dates(text)
+        if relative_dates:
+            dates.extend(relative_dates)
+
+        if dates:
+            entities["dates"] = dates
 
         # fallback days
         days_data = self._extract_days(text, percentage)
         if days_data:
-            entities.update(days_data)
+            if "dates" in entities:
+                entities["dates"].extend(days_data["dates"])
+            else:
+                entities["dates"] = days_data["dates"]
 
         # months
         month = self._extract_month(text)
@@ -52,7 +65,6 @@ class EntityExtractor:
         return None
 
     def _extract_dates(self, text: str):
-        # find full dates like 25 march
         date_matches = re.findall(
             r'\b(\d{1,2})(?:st|nd|rd|th)?\s+(january|february|march|april|may|june|july|august|september|october|november|december)\b',
             text
@@ -61,19 +73,11 @@ class EntityExtractor:
         if not date_matches:
             return None
 
-        dates = [(int(day), month) for day, month in date_matches]
-
-        data = {
-            "dates": dates
-        }
-
-        if len(dates) >= 2:
-            data["start_date"] = f"{dates[0][0]} {dates[0][1]}"
-            data["end_date"] = f"{dates[1][0]} {dates[1][1]}"
-
-        return data
+        return [(int(day), month) for day, month in date_matches]
 
     def _extract_days(self, text: str, percentage: int | None):
+        today = datetime.now()
+
         # extract ordinal days like 25th
         day_matches = re.findall(r'\b(\d{1,2})(?:st|nd|rd|th)\b', text)
         days = [int(d) for d in day_matches]
@@ -87,10 +91,18 @@ class EntityExtractor:
 
             days = [n for n in numbers if n <= 31]
 
-        if days:
-            return {"days": days}
+        if not days:
+            return None
 
-        return None
+        # check if month exists in text
+        month = self._extract_month(text)
+
+        if not month:
+            month = today.strftime("%B").lower()
+
+        dates = [(day, month) for day in days]
+
+        return {"dates": dates}
 
     def _extract_month(self, text: str):
         # find first month mentioned
@@ -105,4 +117,24 @@ class EntityExtractor:
         if not matches:
             return None
         return [m.replace(" ", "").lower() for m in matches]
-        
+    
+
+    def _extract_relative_dates(self, text: str):
+        today = datetime.now()
+
+        mapping = {
+            "day before yesterday": -2,
+            "yesterday": -1,
+            "today": 0,
+            "tomorrow": 1,
+            "day after tomorrow": 2
+        }
+
+        results = []
+
+        for phrase, offset in mapping.items():
+            if re.search(rf"\b{phrase}\b", text):
+                target_date = today + timedelta(days=offset)
+                results.append((target_date.day, target_date.strftime("%B").lower()))
+
+        return results if results else None
