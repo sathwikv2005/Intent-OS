@@ -6,8 +6,4 @@ clf.train()
 while True:
     text = input("You: ")
     intent, confidence = clf.predict(text)
-
-    if confidence < 0.3:
-        print("I didn't understand that.")
-    else:
-        print("Intent:", intent)
+    print(f"Intent {confidence:.2f}: {intent}")

@@ -1,0 +1,12 @@
+[
+  {
+    "query": "what cources do i need to attend",
+    "confidence": 0.3695756784760858,
+    "prediction": "get_timetable"
+  },
+  {
+    "query": "what is your name",
+    "confidence": 0.3315348184717093,
+    "prediction": "get_timetable"
+  }
+]
