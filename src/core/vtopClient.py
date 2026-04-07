@@ -73,7 +73,7 @@ class vtopClient:
             return {"success" : True, "timetable": self._timetable}
         
         self.checkLogin()
-        res = requests.get(f"{BASE_URL}/timetable?jsessionId={self.cookie}&csrf={self.csrf}")
+        res = requests.get(f"{BASE_URL}/timetable?jsessionId={self.cookie}&csrf={self.csrf}&semID={self.sem}")
         data = res.json()
         if(res.status_code != 200):
               return {"success" : False, "error": data.get("error", "Timetable fetch failed")}
