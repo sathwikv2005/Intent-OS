@@ -45,10 +45,17 @@ class EntityExtractor:
         # fallback days
         days_data = self._extract_days(text, percentage)
         if days_data:
-            if "dates" in entities:
-                entities["dates"].extend(days_data["dates"])
-            else:
-                entities["dates"] = days_data["dates"]
+            dates.extend(days_data["dates"])
+
+        if not explicit_dates:
+            days_data = self._extract_days(text, percentage)
+            if days_data:
+                dates.extend(days_data["dates"])
+
+        # remove duplicates
+        if dates:
+            dates = list(dict.fromkeys(dates))
+            entities["dates"] = dates
 
         # months
         month = self._extract_month(text)
@@ -84,7 +91,10 @@ class EntityExtractor:
 
         # fallback numbers
         if not days:
-            numbers = [int(n) for n in re.findall(r'\b\d{1,2}\b', text)]
+            numbers = [
+                        int(n) for n in re.findall(r'\b\d{1,2}\b', text)
+                        if not re.search(rf"{n}\s+(january|february|march|april|may|june|july|august|september|october|november|december)", text)
+                    ]
 
             if percentage is not None:
                 numbers = [n for n in numbers if n != percentage]
