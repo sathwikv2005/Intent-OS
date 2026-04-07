@@ -1,19 +1,21 @@
-[
-	{
-		"tag": "get_timetable",
-		"patterns": [
-			"show my timetable",
-			"what are my classes today",
-			"schedule for today",
-			"what classes do i have"
-		]
-	},
-	{
-		"tag": "get_attendance",
-		"patterns": ["show my attendance", "attendance percentage", "how much attendance do i have"]
-	},
-	{
-		"tag": "get_marks",
-		"patterns": ["show my marks", "my scores", "exam results"]
-	}
-]
+{
+	"intents": [
+		{
+			"tag": "get_timetable",
+			"patterns": [
+				"show my timetable",
+				"what are my classes today",
+				"schedule for today",
+				"what classes do i have"
+			]
+		},
+		{
+			"tag": "get_attendance",
+			"patterns": ["show my attendance", "attendance percentage", "how much attendance do i have"]
+		},
+		{
+			"tag": "get_marks",
+			"patterns": ["show my marks", "my scores", "exam results"]
+		}
+	]
+}
