@@ -1,5 +1,9 @@
+from rich import print
+from rich.console import Console
 from core.handle_query import handle_query
 
+console = Console()
+
 while True:
-    text = input("> You: ")
-    print(handle_query(text))
+    text = console.input("[bold cyan]> You:[/bold cyan] ")
+    print(f"[bold green]{handle_query(text)}[/bold green]")

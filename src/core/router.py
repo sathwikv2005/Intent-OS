@@ -13,10 +13,11 @@ def route(intent, entities=None):
         func = ROUTES[intent]
 
         # if function needs entities later
-        if entities:
-            return func(entities)
+        res = func(entities)
+        if res.get("data"):
+            return res["data"]
+        return res
 
-        return func()
 
     except Exception as e:
         return {"error": str(e)}

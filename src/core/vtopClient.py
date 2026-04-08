@@ -1,6 +1,7 @@
 import requests
+from print_debug import print_debug
 
-BASE_URL = "http://localhost:6700/api"  # your Node API
+BASE_URL = "http://localhost:6700/api" 
 
 class vtopClient:
     def __init__(self):
@@ -31,11 +32,11 @@ class vtopClient:
         return {"success" : True}
 
     def login(self, tries = 0):
-        print(f"Logging into VTOP tries: {tries}.")
+        print_debug(f"Logging into VTOP tries: {tries}.")
         response = requests.post(f"{BASE_URL}/login/autocaptcha")
         
         if response.status_code == 500:
-                print("Login failed.")
+                print_debug("Login failed.")
                 return {"success" : False, "error": "VTOP server might be down"}
 
         data = response.json()
@@ -45,7 +46,7 @@ class vtopClient:
                 if ("csrf" in error or "captcha" in error) and tries < 5:
                     return self.login(tries + 1)
                 
-                print("Login failed.")
+                print_debug("Login failed.")
                 return {"success" : False, "error": data.get("error", "Login failed")}
         
 
@@ -60,11 +61,11 @@ class vtopClient:
 
         res = self.getSem()
         if res.get("error"):
-             print("Login failed.")
+             print_debug("Login failed.")
              return {"success" : False, "error": res.get("error", "Login failed")}
         
 
-        print("Logged into VTOP.")
+        print_debug("Logged into VTOP.")
         return {"success" : True}
       
 
