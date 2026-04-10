@@ -16,7 +16,7 @@ def get_timetable(entities=None):
 
     if res.get("error"):
         return {"success": False, "error": res["error"]}
-    print(res["timetable"])
+    
     formatted = format_timetable(res["timetable"], entities)
 
     return {
@@ -30,7 +30,7 @@ def get_attendance(entities=None):
 
     if res.get("error"):
         return {"success": False, "error": res["error"]}
-    print(res["attendance"])
+    
     formatted = format_attendance(res["attendance"], entities)
 
     return {
@@ -74,6 +74,9 @@ def classes_can_skip(a, t, p):
 
 def format_attendance(attendance_list, entities=None, min_percent=75):
     rows = []
+
+    if entities and entities.get("percentage"):
+        min_percent = int(entities["percentage"])
 
     # Normalize filter list
     filter_codes = None
