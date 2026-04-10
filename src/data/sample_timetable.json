@@ -1,0 +1,225 @@
+[
+	{
+		"day": "TUE",
+		"classes": [
+			{
+				"type": "theory",
+				"slot": "A1",
+				"courseCode": "CSE1008",
+				"courseTitle": "Theory of Computation",
+				"venue": "325, CB",
+				"class": "A1-CSE1008-TH-325-CB-ALL",
+				"timings": { "start": "09:00", "end": "09:51" }
+			},
+			{
+				"type": "theory",
+				"slot": "B1",
+				"courseCode": "STS4006",
+				"courseTitle": "Advanced Competitive Coding",
+				"venue": "416, CB",
+				"class": "B1-STS4006-TH-416-CB-ALL",
+				"timings": { "start": "10:00", "end": "10:51" }
+			},
+			{
+				"type": "theory",
+				"slot": "TC1",
+				"courseCode": "CSE4004",
+				"courseTitle": "Web Technologies",
+				"venue": "506, CB",
+				"class": "TC1-CSE4004-ETH-506-CB-ALL",
+				"timings": { "start": "11:00", "end": "11:51" }
+			},
+			{
+				"type": "theory",
+				"slot": "D1",
+				"courseCode": "CSE4037",
+				"courseTitle": "Reinforcement Learning",
+				"venue": "504, CB",
+				"class": "D1-CSE4037-ETH-504-CB-ALL",
+				"timings": { "start": "12:00", "end": "12:51" }
+			}
+		]
+	},
+	{
+		"day": "WED",
+		"classes": [
+			{
+				"type": "theory",
+				"slot": "D1",
+				"courseCode": "CSE4037",
+				"courseTitle": "Reinforcement Learning",
+				"venue": "504, CB",
+				"class": "D1-CSE4037-ETH-504-CB-ALL",
+				"timings": { "start": "09:00", "end": "09:51" }
+			},
+			{
+				"type": "theory",
+				"slot": "F1",
+				"courseCode": "FRL1004",
+				"courseTitle": "Basic Spanish",
+				"venue": "231, CB",
+				"class": "F1-FRL1004-TH-231-CB-ALL",
+				"timings": { "start": "10:00", "end": "10:51" }
+			},
+			{
+				"type": "theory",
+				"slot": "E1",
+				"courseCode": "CSE3015",
+				"courseTitle": "Natural Language Processing",
+				"venue": "516, CB",
+				"class": "E1-CSE3015-ETH-516-CB-ALL",
+				"timings": { "start": "11:00", "end": "11:51" }
+			},
+			{
+				"type": "theory",
+				"slot": "B1",
+				"courseCode": "STS4006",
+				"courseTitle": "Advanced Competitive Coding",
+				"venue": "416, CB",
+				"class": "B1-STS4006-TH-416-CB-ALL",
+				"timings": { "start": "12:00", "end": "12:51" }
+			},
+			{
+				"type": "lab",
+				"slot": "L37",
+				"courseCode": "CSE3015",
+				"courseTitle": "Natural Language Processing",
+				"venue": "409, CB",
+				"class": "L37-CSE3015-ELA-409-CB-ALL",
+				"timings": { "start": "14:00", "end": "14:50" }
+			},
+			{
+				"type": "lab",
+				"slot": "L38",
+				"courseCode": "CSE3015",
+				"courseTitle": "Natural Language Processing",
+				"venue": "409, CB",
+				"class": "L38-CSE3015-ELA-409-CB-ALL",
+				"timings": { "start": "14:50", "end": "15:40" }
+			}
+		]
+	},
+	{
+		"day": "THU",
+		"classes": [
+			{
+				"type": "theory",
+				"slot": "C1",
+				"courseCode": "CSE4004",
+				"courseTitle": "Web Technologies",
+				"venue": "506, CB",
+				"class": "C1-CSE4004-ETH-506-CB-ALL",
+				"timings": { "start": "09:00", "end": "09:51" }
+			},
+			{
+				"type": "theory",
+				"slot": "TD1",
+				"courseCode": "CSE4037",
+				"courseTitle": "Reinforcement Learning",
+				"venue": "504, CB",
+				"class": "TD1-CSE4037-ETH-504-CB-ALL",
+				"timings": { "start": "10:00", "end": "10:51" }
+			},
+			{
+				"type": "theory",
+				"slot": "TAA1",
+				"courseCode": "CSE1008",
+				"courseTitle": "Theory of Computation",
+				"venue": "325, CB",
+				"class": "TAA1-CSE1008-TH-325-CB-ALL",
+				"timings": { "start": "11:00", "end": "11:51" }
+			}
+		]
+	},
+	{
+		"day": "FRI",
+		"classes": [
+			{
+				"type": "theory",
+				"slot": "TB1",
+				"courseCode": "STS4006",
+				"courseTitle": "Advanced Competitive Coding",
+				"venue": "416, CB",
+				"class": "TB1-STS4006-TH-416-CB-ALL",
+				"timings": { "start": "09:00", "end": "09:51" }
+			},
+			{
+				"type": "theory",
+				"slot": "TA1",
+				"courseCode": "CSE1008",
+				"courseTitle": "Theory of Computation",
+				"venue": "325, CB",
+				"class": "TA1-CSE1008-TH-325-CB-ALL",
+				"timings": { "start": "10:00", "end": "10:51" }
+			},
+			{
+				"type": "theory",
+				"slot": "F1",
+				"courseCode": "FRL1004",
+				"courseTitle": "Basic Spanish",
+				"venue": "231, CB",
+				"class": "F1-FRL1004-TH-231-CB-ALL",
+				"timings": { "start": "11:00", "end": "11:51" }
+			},
+			{
+				"type": "theory",
+				"slot": "TE1",
+				"courseCode": "CSE3015",
+				"courseTitle": "Natural Language Processing",
+				"venue": "516, CB",
+				"class": "TE1-CSE3015-ETH-516-CB-ALL",
+				"timings": { "start": "12:00", "end": "12:51" }
+			},
+			{
+				"type": "lab",
+				"slot": "L49",
+				"courseCode": "CSE4004",
+				"courseTitle": "Web Technologies",
+				"venue": "517, CB",
+				"class": "L49-CSE4004-ELA-517-CB-ALL",
+				"timings": { "start": "14:00", "end": "14:50" }
+			},
+			{
+				"type": "lab",
+				"slot": "L50",
+				"courseCode": "CSE4004",
+				"courseTitle": "Web Technologies",
+				"venue": "517, CB",
+				"class": "L50-CSE4004-ELA-517-CB-ALL",
+				"timings": { "start": "14:50", "end": "15:40" }
+			}
+		]
+	},
+	{
+		"day": "SAT",
+		"classes": [
+			{
+				"type": "theory",
+				"slot": "E1",
+				"courseCode": "CSE3015",
+				"courseTitle": "Natural Language Processing",
+				"venue": "516, CB",
+				"class": "E1-CSE3015-ETH-516-CB-ALL",
+				"timings": { "start": "09:00", "end": "09:51" }
+			},
+			{
+				"type": "theory",
+				"slot": "C1",
+				"courseCode": "CSE4004",
+				"courseTitle": "Web Technologies",
+				"venue": "506, CB",
+				"class": "C1-CSE4004-ETH-506-CB-ALL",
+				"timings": { "start": "10:00", "end": "10:51" }
+			},
+			{
+				"type": "theory",
+				"slot": "A1",
+				"courseCode": "CSE1008",
+				"courseTitle": "Theory of Computation",
+				"venue": "325, CB",
+				"class": "A1-CSE1008-TH-325-CB-ALL",
+				"timings": { "start": "12:00", "end": "12:51" }
+			}
+		]
+	}
+]

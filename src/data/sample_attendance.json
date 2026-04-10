@@ -1,0 +1,66 @@
+[
+	{
+		"courseDetails": "CSE1008 - Theory of Computation - Theory Only",
+		"classDetails": "AP2025264000413 - A1+TA1+TAA1 - 325",
+		"faculty": "Monali Bordoloi - SCOPE",
+		"attended": "34",
+		"totalClasses": "47",
+		"percentage": "73"
+	},
+	{
+		"courseDetails": "CSE3015 - Natural Language Processing - Embedded Theory",
+		"classDetails": "AP2025264000642 - E1+TE1 - 516",
+		"faculty": "Prashanth Rajam - SCOPE",
+		"attended": "24",
+		"totalClasses": "33",
+		"percentage": "73"
+	},
+	{
+		"courseDetails": "CSE3015 - Natural Language Processing - Embedded Lab",
+		"classDetails": "AP2025264000691 - L37+L38 - 409",
+		"faculty": "Balusa Bhanu Chander - SCOPE",
+		"attended": "16",
+		"totalClasses": "22",
+		"percentage": "73"
+	},
+	{
+		"courseDetails": "CSE4004 - Web Technologies - Embedded Theory",
+		"classDetails": "AP2025264000528 - C1+TC1 - 506",
+		"faculty": "Adla Padma - SCOPE",
+		"attended": "25",
+		"totalClasses": "35",
+		"percentage": "72"
+	},
+	{
+		"courseDetails": "CSE4004 - Web Technologies - Embedded Lab",
+		"classDetails": "AP2025264000609 - L49+L50 - 517",
+		"faculty": "R PRASANNA KUMARI - SCOPE",
+		"attended": "16",
+		"totalClasses": "22",
+		"percentage": "73"
+	},
+	{
+		"courseDetails": "CSE4037 - Reinforcement Learning - Embedded Theory",
+		"classDetails": "AP2025264001580 - D1+TD1 - 504",
+		"faculty": "Jayanta Pratihar - SCOPE",
+		"attended": "26",
+		"totalClasses": "34",
+		"percentage": "77"
+	},
+	{
+		"courseDetails": "FRL1004 - Basic Spanish - Theory Only",
+		"classDetails": "AP2025264000019 - F1 - 231",
+		"faculty": "Anindita Roy - VISH",
+		"attended": "17",
+		"totalClasses": "22",
+		"percentage": "78"
+	},
+	{
+		"courseDetails": "STS4006 - Advanced Competitive Coding - II - Theory Only",
+		"classDetails": "AP2025264000117 - B1+TB1 - 416",
+		"faculty": "PRAKASH - VISH",
+		"attended": "24",
+		"totalClasses": "32",
+		"percentage": "75"
+	}
+]

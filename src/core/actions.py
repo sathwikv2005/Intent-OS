@@ -16,7 +16,7 @@ def get_timetable(entities=None):
 
     if res.get("error"):
         return {"success": False, "error": res["error"]}
-
+    print(res["timetable"])
     formatted = format_timetable(res["timetable"], entities)
 
     return {
@@ -30,7 +30,7 @@ def get_attendance(entities=None):
 
     if res.get("error"):
         return {"success": False, "error": res["error"]}
-
+    print(res["attendance"])
     formatted = format_attendance(res["attendance"], entities)
 
     return {

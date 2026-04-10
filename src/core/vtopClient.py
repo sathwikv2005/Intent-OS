@@ -1,7 +1,11 @@
-import requests
+import requests, os
+import json
 from print_debug import print_debug
 
 BASE_URL = "http://localhost:6700/api" 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+SAMPLE_TIMETABLE = os.path.join(BASE_DIR, "..", "data", "sample_timetable.json")
+SAMPLE_ATTENDANCE =  os.path.join(BASE_DIR, "..", "data", "sample_attendance.json")
 
 class vtopClient:
     def __init__(self):
@@ -10,6 +14,7 @@ class vtopClient:
         self.sem = None
         self._timetable = None
         self._attendance = None
+        self.offline = False
         self.login()
 
     def checkLogin(self):
@@ -33,8 +38,14 @@ class vtopClient:
 
     def login(self, tries = 0):
         print_debug(f"Logging into VTOP tries: {tries}.")
-        response = requests.post(f"{BASE_URL}/login/autocaptcha")
+        try:
+            response = requests.post(f"{BASE_URL}/login/autocaptcha")
+        except requests.exceptions.RequestException:
+            print_debug("Server unavailable. Switching to offline mode.")
+            self.offline = True
+            return {"success": False, "error": "Offline mode"}
         
+
         if response.status_code == 500:
                 print_debug("Login failed.")
                 return {"success" : False, "error": "VTOP server might be down"}
@@ -73,6 +84,11 @@ class vtopClient:
         if self._timetable is not None:
             return {"success" : True, "timetable": self._timetable}
         
+        if self.offline:
+            with open(SAMPLE_TIMETABLE, "r") as f:
+                self._timetable = json.load(f)
+            return {"success": True, "timetable": self._timetable}
+        
         self.checkLogin()
         res = requests.get(f"{BASE_URL}/timetable?jsessionId={self.cookie}&csrf={self.csrf}&semID={self.sem}")
         data = res.json()
@@ -88,6 +104,11 @@ class vtopClient:
     def getAttendance(self):
         if self._attendance is not None:
             return {"success" : True, "attendance": self._attendance}
+        
+        if self.offline:
+            with open(SAMPLE_ATTENDANCE, "r") as f:
+                self._attendance = json.load(f)
+            return {"success": True, "attendance": self._attendance}
         
         self.checkLogin()
         res = requests.get(f"{BASE_URL}/attendance?jsessionId={self.cookie}&csrf={self.csrf}&semID={self.sem}")
